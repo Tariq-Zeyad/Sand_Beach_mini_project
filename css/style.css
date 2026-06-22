@@ -1,0 +1,497 @@
+/* ========== GLOBAL STYLES ========== */
+:root {
+    --sand-color: #F4E4C1;
+    --ocean-blue: #006994;
+    --deep-ocean: #003D5C;
+    --coral: #FF6B6B;
+    --seafoam: #98D8C8;
+    --sand-dark: #D4B896;
+    --text-dark: #2C3E50;
+    --text-light: #F8F9FA;
+    --golden-sand: #E8C97A;
+    --sunset-orange: #F4A460;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FFF8EE 0%, #F0E6D3 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ========== LOADING COMPONENTS ========== */
+.component-loading {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== NAVIGATION STYLES ========== */
+.navbar {
+    background: linear-gradient(135deg, var(--deep-ocean) 0%, var(--ocean-blue) 100%) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 0.4rem 0;
+    background: linear-gradient(135deg, rgba(0, 61, 92, 0.98) 0%, rgba(0, 105, 148, 0.98) 100%) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--golden-sand) !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    color: #FFF !important;
+}
+
+.navbar-brand i {
+    font-size: 1.8rem;
+    margin-right: 8px;
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+.nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--golden-sand);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--golden-sand) !important;
+}
+
+.btn-reservation {
+    background: linear-gradient(135deg, var(--coral) 0%, var(--sunset-orange) 100%);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-reservation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+    background: linear-gradient(135deg, #FF5252 0%, #E8913A 100%);
+    color: white;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+    background: linear-gradient(rgba(0, 61, 92, 0.7), rgba(0, 105, 148, 0.6)), 
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, rgba(244, 228, 193, 1), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--golden-sand);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.location-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.location-badge i {
+    color: var(--coral);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--deep-ocean);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--coral), var(--golden-sand));
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========== MENU CARDS ========== */
+.menu-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    max-width: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card-img {
+    height: 250px;
+     width: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.menu-card:hover .menu-card-img {
+    transform: scale(1.1);
+}
+
+.menu-card-body {
+    padding: 1.5rem;
+}
+
+.menu-item-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--deep-ocean);
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.price-tag {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--coral);
+}
+
+.rating-badge {
+    background: var(--golden-sand);
+    color: var(--deep-ocean);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.category-filter {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.btn-category {
+    background: white;
+    border: 2px solid var(--ocean-blue);
+    color: var(--ocean-blue);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-category:hover,
+.btn-category.active {
+    background: var(--ocean-blue);
+    color: white;
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-section {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F4E8 100%);
+    border-radius: 30px;
+    padding: 3rem;
+    margin: 3rem 0;
+}
+
+.about-image {
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--seafoam);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: var(--deep-ocean);
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--golden-sand);
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: var(--golden-sand);
+    margin-bottom: 1rem;
+}
+
+/* ========== FAQ ACCORDION ========== */
+.accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--deep-ocean) 100%);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 105, 148, 0.25);
+    border-color: var(--ocean-blue);
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 1rem;
+    border-radius: 15px !important;
+    overflow: hidden;
+}
+
+/* ========== RESERVATION FORM ========== */
+.reservation-section {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0F4F8 100%);
+    border-radius: 30px;
+    padding: 3rem;
+}
+
+.form-control:focus {
+    border-color: var(--ocean-blue);
+    box-shadow: 0 0 0 0.25rem rgba(0, 105, 148, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--deep-ocean);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    background: linear-gradient(135deg, var(--deep-ocean) 0%, #002233 100%);
+    color: white;
+    padding: 4rem 0 0;
+}
+
+.footer h5 {
+    color: var(--golden-sand);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer-link {
+    color: #B0C4DE;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-link:hover {
+    color: var(--golden-sand);
+    transform: translateX(5px);
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--ocean-blue);
+    transform: translateY(-3px);
+    color: white;
+}
+
+.developer-credit {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-section,
+    .reservation-section {
+        padding: 1.5rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .menu-card-img {
+        height: 200px;
+    }
+}

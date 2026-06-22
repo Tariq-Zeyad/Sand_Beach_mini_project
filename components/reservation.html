@@ -1,0 +1,96 @@
+<section id="reservation" class="py-5">
+    <div class="container">
+        <div class="reservation-section">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <h2 class="section-title text-start">Book Your Table</h2>
+                    <p class="mt-4">
+                        Reserve your spot at Sand Beach Restaurant and enjoy an unforgettable dining 
+                        experience by the sea.
+                    </p>
+                    
+                    <div class="mt-4">
+                        <h5><i class="bi bi-telephone-fill text-primary me-2"></i>Phone Reservations</h5>
+                        <p class="ms-4">+970-599-123456</p>
+                        
+                        <h5 class="mt-3"><i class="bi bi-clock-fill text-primary me-2"></i>Hours</h5>
+                        <p class="ms-4">Daily: 12:00 PM - 11:00 PM</p>
+                        
+                        <h5 class="mt-3"><i class="bi bi-geo-alt-fill text-primary me-2"></i>Location</h5>
+                        <p class="ms-4">
+                            Gaza, Khan Younis<br>
+                            South of Al-Nus Intersection<br>
+                            By the Sea
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <form id="reservationForm" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="fullName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                                <div class="invalid-feedback">Please enter your full name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                                <div class="invalid-feedback">Please enter your phone number.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="guests" class="form-label">Number of Guests *</label>
+                                <select class="form-select" id="guests" required>
+                                    <option value="">Select...</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6+ Guests</option>
+                                </select>
+                                <div class="invalid-feedback">Please select number of guests.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="date" class="form-label">Date *</label>
+                                <input type="date" class="form-control" id="date" required>
+                                <div class="invalid-feedback">Please select a date.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="time" class="form-label">Time *</label>
+                                <select class="form-select" id="time" required>
+                                    <option value="">Select time...</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="12:30">12:30 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="13:30">1:30 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a time.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="specialRequests" class="form-label">Special Requests</label>
+                                <textarea class="form-control" id="specialRequests" rows="3" 
+                                          placeholder="Allergies, celebrations, seating preferences..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-reservation btn-lg w-100">
+                                    <i class="bi bi-calendar-check me-2"></i>Confirm Reservation
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
