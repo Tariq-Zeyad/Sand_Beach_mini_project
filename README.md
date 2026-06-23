@@ -6,7 +6,7 @@
 **Sand Beach Restaurant** is a fully responsive restaurant website designed for a seafood restaurant located in **Gaza, Khan Younis - South of Al-Nus Intersection, By the Sea**. The website showcases the restaurant's menu, location, and provides an online reservation system.
 
 ### Live Demo
-https://tariq-zeyad.github.io/Sand_Beach/
+https://tariq-zeyad.github.io/Sand_Beach_mini_project/
 
 
 ---
